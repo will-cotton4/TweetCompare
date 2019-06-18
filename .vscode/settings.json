@@ -1,3 +1,6 @@
 {
-    "python.pythonPath": "C:\\Users\\willc\\.virtualenvs\\TweetCompare-gHZnwOs3\\Scripts\\python.exe"
+    "python.pythonPath": "C:\\Users\\willc\\Anaconda3\\envs\\tweetcompare\\python.exe",
+    "python.linting.pylintEnabled": false,
+    "python.linting.pep8Enabled": true,
+    "python.linting.enabled": true
 }

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TweetCompare - {{ title }}</title>
+    </head>
+
+    <body>
+        <h1>TweetCompare!</h1>
+        <p>Content will go here...</p>
+        <ul>
+            {% for user in users %}
+            <li>{{ user.name }}</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
