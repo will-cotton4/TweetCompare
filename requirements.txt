@@ -19,6 +19,7 @@ Flask==1.0.3
 Flask-SQLAlchemy==2.4.0
 furl==2.0.0
 graphviz==0.10.1
+gunicorn==19.9.0
 idna==2.8
 infinity==1.4
 intervals==0.8.1
