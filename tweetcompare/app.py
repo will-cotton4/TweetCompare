@@ -53,16 +53,27 @@ def create_app():
         if user1 == user2:
             message = 'Cannot compare a user to themselves!'
         else:
-            prediction = predict_user(user1, user2,
+            comparison = predict_user(user1, user2,
                                       request.values['tweet_text'])
+            user1_name = comparison.user1_name
+            user2_name = comparison.user2_name
+            user1_prob = comparison.user1_prob
+            user2_prob = comparison.user2_prob
+            prediction = comparison.predicted_user
             message = '"{}" is more likely to be said by {} than {}'.format(
-                request.values['tweet_text'], user1 if prediction else user2,
-                user2 if prediction else user1)
-        return render_template('prediction.html', title='Prediction', message=message)
+                request.values['tweet_text'],
+                user1_name if prediction else user2_name,
+                user2_name if prediction else user1_name)
+        return render_template('prediction.html', title='Prediction',
+                               message=message,
+                               user1_name=user1_name, user1_prob=user1_prob,
+                               user2_name=user2_name, user2_prob=user2_prob
+                               )
+
     @app.route('/reset')
     def reset():
-        #CACHE.flushall()
-        #CACHED_COMPARISONS.clear()
+        # CACHE.flushall()
+        # CACHED_COMPARISONS.clear()
         DB.drop_all()
         DB.create_all()
         add_users()

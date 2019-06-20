@@ -6,10 +6,8 @@ import tweepy
 from .models import DB, Tweet, User
 
 TWITTER_USERS = ['calebhicks', 'elonmusk', 'rrherr', 'SteveMartinToGo',
-                'nasa', 'sadserver', 'jkhowland', 'austen',
-                'common_squirrel', 'KenJennings', 'conanobrien',
-                'big_ben_clock', 'IAM_SHAKESPEARE']
-                
+                 'austen']
+
 TWITTER_AUTH = tweepy.OAuthHandler(getenv('TWITTER_CONSUMER_KEY'),
                                    getenv('TWITTER_CONSUMER_SECRET'))
 TWITTER_AUTH.set_access_token(getenv('TWITTER_ACCESS_TOKEN'),
@@ -19,7 +17,9 @@ BASILICA = basilica.Connection(getenv('BASILICA_KEY'))
 
 
 def add_or_update_user(username):
-    """ Add or update user and their tweets, else error if not a twitter user """
+    """
+    Add or update user and their tweets, else error if not a twitter user
+    """
     try:
         twitter_user = TWITTER.get_user(username)
         # TODO: get picture, follower count, etc.
