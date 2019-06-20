@@ -9,7 +9,16 @@ pylint = "*"
 [packages]
 flask = "*"
 flask-sqlalchemy = "*"
+tweepy = "*"
+python-decouple = "*"
+basilica = "*"
+numpy = "*"
+sklearn = "*"
+ipykernel = "*"
+python-dotenv = "*"
+scikit-learn = "*"
 gunicorn = "*"
+psycopg2-binary = "*"
 
 [requires]
 python_version = "3.7"
