@@ -4,7 +4,7 @@ from os import getenv
 from pickle import dump, loads
 from flask import Flask, render_template, request
 from .models import DB, User
-from .twitter import add_or_update_user, display_user_tweets
+from .twitter import add_or_update_user, display_user_tweets, add_users
 from decouple import config
 
 
