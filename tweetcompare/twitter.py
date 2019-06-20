@@ -5,8 +5,11 @@ import basilica
 import tweepy
 from .models import DB, Tweet, User
 
-TWITTER_USERS = ['calebhicks', 'elonmusk', 'rherr', 'SteveMartinToGo']
-
+TWITTER_USERS = ['calebhicks', 'elonmusk', 'rrherr', 'SteveMartinToGo',
+                'nasa', 'sadserver', 'jkhowland', 'austen',
+                'common_squirrel', 'KenJennings', 'conanobrien',
+                'big_ben_clock', 'IAM_SHAKESPEARE']
+                
 TWITTER_AUTH = tweepy.OAuthHandler(getenv('TWITTER_CONSUMER_KEY'),
                                    getenv('TWITTER_CONSUMER_SECRET'))
 TWITTER_AUTH.set_access_token(getenv('TWITTER_ACCESS_TOKEN'),
@@ -54,3 +57,5 @@ def add_users(users=TWITTER_USERS):
     """
     Add/update list of users.
     """
+    for user in users:
+        add_or_update_user(user)
