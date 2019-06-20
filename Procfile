@@ -1,1 +1,0 @@
-web:gunicorn tweetcompare:APP -t 120
